@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c5d6jblpwcdvo"]
+
+[ext_resource type="Texture2D" uid="uid://bmu4td84ih4r3" path="res://assets/textures/tiles/hole.png" id="1_c8h6b"]
+
+[node name="Hole" type="Node2D" unique_id=129941421]
+
+[node name="HoleSprite" type="Sprite2D" parent="." unique_id=1369159223]
+texture = ExtResource("1_c8h6b")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)

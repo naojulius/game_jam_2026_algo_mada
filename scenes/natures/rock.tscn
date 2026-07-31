@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://n7knob6fbme2"]
+
+[ext_resource type="Texture2D" uid="uid://ch6i6w8eux5kd" path="res://assets/textures/tiles/rocks.png" id="1_e4ram"]
+
+[node name="Rock" type="Node2D" unique_id=129941421]
+
+[node name="RockSprite" type="Sprite2D" parent="." unique_id=1369159223]
+texture = ExtResource("1_e4ram")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)

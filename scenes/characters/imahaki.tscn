@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckk2ukfm0qv77"]
+
+[ext_resource type="Script" uid="uid://c435lf4tdn4ah" path="res://scripts/characters/imahaki.gd" id="1_pj3gw"]
+[ext_resource type="Texture2D" uid="uid://ceuycbk3istre" path="res://assets/textures/characters/imahaki.png" id="1_uab4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uab4y"]
+size = Vector2(10, 12)
+
+[node name="Imahaki" type="CharacterBody2D" unique_id=487417437]
+script = ExtResource("1_pj3gw")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2098174556]
+shape = SubResource("RectangleShape2D_uab4y")
+debug_color = Color(1.347661e-06, 0.6463175, 0.23239765, 0)
+
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=325729642]
+texture = ExtResource("1_uab4y")
+hframes = 5
+vframes = 20

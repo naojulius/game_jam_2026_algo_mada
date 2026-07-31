@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdbr866r5hvov"]
+
+[ext_resource type="Script" uid="uid://blmhpkdljpc0" path="res://scripts/characters/ikotofotsy.gd" id="1_7blgw"]
+[ext_resource type="Texture2D" uid="uid://b2g28oqhe6aqv" path="res://assets/textures/characters/ikotofotsy.png" id="2_7blgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uab4y"]
+size = Vector2(10, 12)
+
+[node name="Ikotofotsy" type="CharacterBody2D" unique_id=487417437]
+script = ExtResource("1_7blgw")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2098174556]
+shape = SubResource("RectangleShape2D_uab4y")
+debug_color = Color(1.347661e-06, 0.6463175, 0.23239765, 0)
+
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=325729642]
+texture = ExtResource("2_7blgw")
+hframes = 5
+vframes = 20
