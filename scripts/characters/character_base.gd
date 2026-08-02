@@ -2,6 +2,7 @@
 class_name CharacterBase
 extends CharacterBody2D
 
+@onready var emote: Node2D = $EmoteNode
 @export var character_name: String = "Character"
 
 var state_machine: StateMachine

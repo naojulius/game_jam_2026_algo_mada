@@ -3,7 +3,7 @@ class_name MoveState
 extends StateBase
 
 ## Vitesse de déplacement du personnage (en pixels par seconde)
-var move_speed: float = 20.0
+var move_speed: float = 80.0
 
 ## Indice du point courant dans le chemin
 var current_path_index: int = 0
@@ -11,7 +11,8 @@ var target_world_position: Vector2 = Vector2.ZERO
 var is_moving: bool = false
 
 func enter() -> void:
-	#print("[%s] Étape 2 : DÉPLACEMENT (Move)..." % character.character_name)
+	character.emote.hide_emote()
+	print("[%s] Étape 2 : DÉPLACEMENT (Move)..." % character.character_name)
 	
 	current_path_index = 0
 	
@@ -32,9 +33,9 @@ func physics_update(delta: float) -> void:
 		target_world_position, 
 		move_speed * delta
 	)
-
+	
 	# Si le personnage est arrivé très près de la case cible
-	if character.global_position.distance_to(target_world_position) < 0.0:
+	if character.global_position.distance_to(target_world_position) < 2.0:
 		character.global_position = target_world_position # Recalage parfait sur la grille
 		current_path_index += 1
 		_get_next_target()

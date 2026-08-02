@@ -1,11 +1,14 @@
 # astar_manager.gd
 extends Node
 
+const DEBUG_PATH_NODE = preload("uid://hitmjavrywj4")
+
+
 var astar_grid: AStarGrid2D = AStarGrid2D.new()
 var grid_size: Vector2i = Vector2i.ZERO
 var tile_size: Vector2 = Vector2.ZERO
 
-## Initialise la grille A* à partir des données de la carte
+## Initialise la grille à partir des données de la carte
 func setup_grid(size: Vector2i, t_size: Vector2, walkable_pos: Array[Vector2i]) -> void:
 	grid_size = size
 	tile_size = t_size
@@ -14,10 +17,10 @@ func setup_grid(size: Vector2i, t_size: Vector2, walkable_pos: Array[Vector2i]) 
 	astar_grid.cell_size = tile_size
 	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
 	astar_grid.default_estimate_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
-	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER # Déplacement 4 directions (Cardinal)
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER # Déplacement 4 directions
 	astar_grid.update()
 
-	# Tout rendre solide par défaut, puis ouvrir uniquement les cases de walkable_pos
+	# Rendre tout solide par défaut, puis ouvrir uniquement les cases de walkable_pos
 	astar_grid.fill_solid_region(Rect2i(Vector2i.ZERO, grid_size), true)
 	for pos in walkable_pos:
 		if _is_in_bounds(pos):
@@ -53,8 +56,9 @@ func get_all_walkable_cells() -> Array[Vector2i]:
 	return walkable
 
 #region RECURSIVE_BACKTRACKING
-## Trouve un chemin en utilisant le Backtracking Récursif
-func find_path_recursive(start: Vector2i, target: Vector2i, max_depth: int = 60) -> Array[Vector2i]:
+## Trouve un chemin en utilisant le Backtracking Récursif (DFS)
+func find_path_recursive(start: Vector2i, target: Vector2i, _max_depth: int = 60) -> Array[Vector2i]:
+	var max_depth: int = grid_size.x * grid_size.y
 	var path: Array[Vector2i] = []
 	
 	# Sécurités initiales
@@ -64,31 +68,50 @@ func find_path_recursive(start: Vector2i, target: Vector2i, max_depth: int = 60)
 		
 	_apply_character_collisions()
 
-	# Si la cible est solide ou occupée, on cherche la case marchable la plus proche de la cible
+	# Si la cible est solide ou occupée, on cherche la case marchable la plus proche
 	if not _is_valid_cell(target):
 		target = _get_closest_valid_neighbor(target)
 		if target == Vector2i(-1, -1):
 			_clear_character_collisions()
 			return path
 
-	var visited: Array[Vector2i] = []
-	_backtrack_search(start, target, visited, path, max_depth)
-	_clear_character_collisions()
+	# Dictionnaire pour une vérification des cases visitées en O(1)
+	var visited := {}
 	
+	# Lancement du backtracking
+	_backtrack_search(start, target, visited, path, max_depth)
+	
+	_clear_character_collisions()
+
+	#for p in path:
+	#	var pos = grid_to_world(p)
+	#	var debug = DEBUG_PATH_NODE.instantiate()
+	#	get_tree().root.add_child(debug)
+	#	debug.type = 0
+	#	
+	#	if p == start:
+	#		debug.type = 1
+	#	
+	#	if p == target:
+	#		debug.type = 2
+	#	
+	#	
+	#	debug.global_position = pos
 	return path
 
-## Algorithme récursif avec exploration et backtracking
-func _backtrack_search(current: Vector2i, target: Vector2i, visited: Array[Vector2i], path: Array[Vector2i], max_depth: int) -> bool:
+## Algorithme récursif d'exploration avec backtracking
+func _backtrack_search(current: Vector2i, target: Vector2i, visited: Dictionary, path: Array[Vector2i], max_depth: int) -> bool:
+	# 1. Empiler l'étape actuelle
 	path.append(current)
-	visited.append(current)
+	visited[current] = true
 
-	# Condition d'arrêt (Objectif atteint)
+	# Condition de succès (Objectif atteint)
 	if current == target:
 		return true
 
 	# Condition de fin d'exploration (Profondeur max atteinte)
 	if path.size() >= max_depth:
-		path.pop_back()
+		path.pop_back() # Backtrack : on dépile l'étape non concluante
 		return false
 
 	# 4 directions adjacentes (Haut, Bas, Gauche, Droite)
@@ -102,14 +125,14 @@ func _backtrack_search(current: Vector2i, target: Vector2i, visited: Array[Vecto
 	# Tri heuristique : prioriser les voisins les plus proches de la cible
 	neighbors.sort_custom(func(a, b): return a.distance_squared_to(target) < b.distance_squared_to(target))
 
+	# 2. Explorer les branches possibles
 	for next_pos in neighbors:
-		# Vérifier si la case est valide, pas solide et non visitée
 		if _is_valid_cell(next_pos) and not visited.has(next_pos):
-			# Appel récursif (Exploration)
+			# Appel récursif
 			if _backtrack_search(next_pos, target, visited, path, max_depth):
-				return true
+				return true # La cible a été trouvée plus loin dans cette branche !
 
-	# BACKTRACKING : Si aucun voisin ne mène à la cible, on annule cette étape
+	# 3. BACKTRACKING : Si aucun voisin ne mène à la cible, on annule cette étape
 	path.pop_back()
 	return false
 

@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://n7knob6fbme2" path="res://scenes/natures/rock.tscn" id="3_fakoo"]
 [ext_resource type="PackedScene" uid="uid://c5d6jblpwcdvo" path="res://scenes/natures/hole.tscn" id="4_qk17b"]
 [ext_resource type="PackedScene" uid="uid://ckk2ukfm0qv77" path="res://scenes/characters/imahaki.tscn" id="5_fakoo"]
+[ext_resource type="PackedScene" uid="uid://cpli78on87sp4" path="res://scenes/characters/invader.tscn" id="6_qk17b"]
+[ext_resource type="PackedScene" uid="uid://cdbr866r5hvov" path="res://scenes/characters/ikotofotsy.tscn" id="7_f81jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bu1xc"]
 texture = ExtResource("2_uqn3x")
@@ -24,6 +26,8 @@ packed_tree = ExtResource("2_8a1or")
 packed_rock = ExtResource("3_fakoo")
 packed_hole = ExtResource("4_qk17b")
 packed_imahaki = ExtResource("5_fakoo")
+packed_invader = ExtResource("6_qk17b")
+packed_ikotofotsy = ExtResource("7_f81jv")
 
 [node name="TileMapsNode" type="Node2D" parent="." unique_id=1402287531]
 
@@ -35,263 +39,263 @@ tile_set = SubResource("TileSet_acbpr")
 
 [node name="RocksNode" type="Node2D" parent="NaturesNode" unique_id=806510447]
 
-[node name="Rock" type="Node2D" parent="NaturesNode/RocksNode" unique_id=129941421 instance=ExtResource("3_fakoo")]
+[node name="Rock" parent="NaturesNode/RocksNode" unique_id=129941421 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 8)
 
-[node name="@Node2D@63779" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1816447275 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63779" parent="NaturesNode/RocksNode" unique_id=1816447275 instance=ExtResource("3_fakoo")]
 position = Vector2(24, 8)
 
-[node name="@Node2D@63780" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1143820941 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63780" parent="NaturesNode/RocksNode" unique_id=1143820941 instance=ExtResource("3_fakoo")]
 position = Vector2(40, 8)
 
-[node name="@Node2D@63781" type="Node2D" parent="NaturesNode/RocksNode" unique_id=637530734 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63781" parent="NaturesNode/RocksNode" unique_id=637530734 instance=ExtResource("3_fakoo")]
 position = Vector2(56, 8)
 
-[node name="@Node2D@63782" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1690451771 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63782" parent="NaturesNode/RocksNode" unique_id=1690451771 instance=ExtResource("3_fakoo")]
 position = Vector2(72, 8)
 
-[node name="@Node2D@63783" type="Node2D" parent="NaturesNode/RocksNode" unique_id=668478108 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63783" parent="NaturesNode/RocksNode" unique_id=668478108 instance=ExtResource("3_fakoo")]
 position = Vector2(88, 8)
 
-[node name="@Node2D@63784" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1269036498 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63784" parent="NaturesNode/RocksNode" unique_id=1269036498 instance=ExtResource("3_fakoo")]
 position = Vector2(104, 8)
 
-[node name="@Node2D@63785" type="Node2D" parent="NaturesNode/RocksNode" unique_id=983151160 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63785" parent="NaturesNode/RocksNode" unique_id=983151160 instance=ExtResource("3_fakoo")]
 position = Vector2(120, 8)
 
-[node name="@Node2D@63786" type="Node2D" parent="NaturesNode/RocksNode" unique_id=138730472 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63786" parent="NaturesNode/RocksNode" unique_id=138730472 instance=ExtResource("3_fakoo")]
 position = Vector2(136, 8)
 
-[node name="@Node2D@63787" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1852283064 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63787" parent="NaturesNode/RocksNode" unique_id=1852283064 instance=ExtResource("3_fakoo")]
 position = Vector2(152, 8)
 
-[node name="@Node2D@63788" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1004101564 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63788" parent="NaturesNode/RocksNode" unique_id=1004101564 instance=ExtResource("3_fakoo")]
 position = Vector2(168, 8)
 
-[node name="@Node2D@63789" type="Node2D" parent="NaturesNode/RocksNode" unique_id=2084657578 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63789" parent="NaturesNode/RocksNode" unique_id=2084657578 instance=ExtResource("3_fakoo")]
 position = Vector2(184, 8)
 
-[node name="@Node2D@63790" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1403277076 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63790" parent="NaturesNode/RocksNode" unique_id=1403277076 instance=ExtResource("3_fakoo")]
 position = Vector2(200, 8)
 
-[node name="@Node2D@63791" type="Node2D" parent="NaturesNode/RocksNode" unique_id=979345434 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63791" parent="NaturesNode/RocksNode" unique_id=979345434 instance=ExtResource("3_fakoo")]
 position = Vector2(216, 8)
 
-[node name="@Node2D@63792" type="Node2D" parent="NaturesNode/RocksNode" unique_id=682317289 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63792" parent="NaturesNode/RocksNode" unique_id=682317289 instance=ExtResource("3_fakoo")]
 position = Vector2(232, 8)
 
-[node name="@Node2D@63793" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1523618371 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63793" parent="NaturesNode/RocksNode" unique_id=1523618371 instance=ExtResource("3_fakoo")]
 position = Vector2(248, 8)
 
-[node name="@Node2D@63794" type="Node2D" parent="NaturesNode/RocksNode" unique_id=123928676 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63794" parent="NaturesNode/RocksNode" unique_id=123928676 instance=ExtResource("3_fakoo")]
 position = Vector2(264, 8)
 
-[node name="@Node2D@63795" type="Node2D" parent="NaturesNode/RocksNode" unique_id=747639225 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63795" parent="NaturesNode/RocksNode" unique_id=747639225 instance=ExtResource("3_fakoo")]
 position = Vector2(280, 8)
 
-[node name="@Node2D@63796" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1582522340 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63796" parent="NaturesNode/RocksNode" unique_id=1582522340 instance=ExtResource("3_fakoo")]
 position = Vector2(296, 8)
 
-[node name="@Node2D@63797" type="Node2D" parent="NaturesNode/RocksNode" unique_id=125529708 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63797" parent="NaturesNode/RocksNode" unique_id=125529708 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 8)
 
-[node name="@Node2D@63798" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1497475585 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63798" parent="NaturesNode/RocksNode" unique_id=1497475585 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 24)
 
-[node name="@Node2D@63799" type="Node2D" parent="NaturesNode/RocksNode" unique_id=410120901 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63799" parent="NaturesNode/RocksNode" unique_id=410120901 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 24)
 
-[node name="@Node2D@63800" type="Node2D" parent="NaturesNode/RocksNode" unique_id=117041528 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63800" parent="NaturesNode/RocksNode" unique_id=117041528 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 40)
 
-[node name="@Node2D@63807" type="Node2D" parent="NaturesNode/RocksNode" unique_id=629380278 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63807" parent="NaturesNode/RocksNode" unique_id=629380278 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 40)
 
-[node name="@Node2D@63808" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1844713678 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63808" parent="NaturesNode/RocksNode" unique_id=1844713678 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 56)
 
-[node name="@Node2D@63813" type="Node2D" parent="NaturesNode/RocksNode" unique_id=567143168 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63813" parent="NaturesNode/RocksNode" unique_id=567143168 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 56)
 
-[node name="@Node2D@63814" type="Node2D" parent="NaturesNode/RocksNode" unique_id=786174968 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63814" parent="NaturesNode/RocksNode" unique_id=786174968 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 72)
 
-[node name="@Node2D@63820" type="Node2D" parent="NaturesNode/RocksNode" unique_id=883266261 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63820" parent="NaturesNode/RocksNode" unique_id=883266261 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 72)
 
-[node name="@Node2D@63821" type="Node2D" parent="NaturesNode/RocksNode" unique_id=872809453 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63821" parent="NaturesNode/RocksNode" unique_id=872809453 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 88)
 
-[node name="@Node2D@63822" type="Node2D" parent="NaturesNode/RocksNode" unique_id=51314735 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63822" parent="NaturesNode/RocksNode" unique_id=51314735 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 88)
 
-[node name="@Node2D@63823" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1404286386 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63823" parent="NaturesNode/RocksNode" unique_id=1404286386 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 104)
 
-[node name="@Node2D@63824" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1073788073 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63824" parent="NaturesNode/RocksNode" unique_id=1073788073 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 104)
 
-[node name="@Node2D@63825" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1240340575 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63825" parent="NaturesNode/RocksNode" unique_id=1240340575 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 120)
 
-[node name="@Node2D@63826" type="Node2D" parent="NaturesNode/RocksNode" unique_id=615616002 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63826" parent="NaturesNode/RocksNode" unique_id=615616002 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 120)
 
-[node name="@Node2D@63827" type="Node2D" parent="NaturesNode/RocksNode" unique_id=377586642 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63827" parent="NaturesNode/RocksNode" unique_id=377586642 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 136)
 
-[node name="@Node2D@63831" type="Node2D" parent="NaturesNode/RocksNode" unique_id=55158247 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63831" parent="NaturesNode/RocksNode" unique_id=55158247 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 136)
 
-[node name="@Node2D@63832" type="Node2D" parent="NaturesNode/RocksNode" unique_id=2077926323 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63832" parent="NaturesNode/RocksNode" unique_id=2077926323 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 152)
 
-[node name="@Node2D@63835" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1873620863 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63835" parent="NaturesNode/RocksNode" unique_id=1873620863 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 152)
 
-[node name="@Node2D@63836" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1591790614 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63836" parent="NaturesNode/RocksNode" unique_id=1591790614 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 168)
 
-[node name="@Node2D@63840" type="Node2D" parent="NaturesNode/RocksNode" unique_id=2096183731 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63840" parent="NaturesNode/RocksNode" unique_id=2096183731 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 168)
 
-[node name="@Node2D@63841" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1026495106 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63841" parent="NaturesNode/RocksNode" unique_id=1026495106 instance=ExtResource("3_fakoo")]
 position = Vector2(8, 184)
 
-[node name="@Node2D@63842" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1561789265 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63842" parent="NaturesNode/RocksNode" unique_id=1561789265 instance=ExtResource("3_fakoo")]
 position = Vector2(24, 184)
 
-[node name="@Node2D@63843" type="Node2D" parent="NaturesNode/RocksNode" unique_id=541960807 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63843" parent="NaturesNode/RocksNode" unique_id=541960807 instance=ExtResource("3_fakoo")]
 position = Vector2(40, 184)
 
-[node name="@Node2D@63844" type="Node2D" parent="NaturesNode/RocksNode" unique_id=76844988 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63844" parent="NaturesNode/RocksNode" unique_id=76844988 instance=ExtResource("3_fakoo")]
 position = Vector2(56, 184)
 
-[node name="@Node2D@63845" type="Node2D" parent="NaturesNode/RocksNode" unique_id=2052461918 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63845" parent="NaturesNode/RocksNode" unique_id=2052461918 instance=ExtResource("3_fakoo")]
 position = Vector2(72, 184)
 
-[node name="@Node2D@63846" type="Node2D" parent="NaturesNode/RocksNode" unique_id=98922399 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63846" parent="NaturesNode/RocksNode" unique_id=98922399 instance=ExtResource("3_fakoo")]
 position = Vector2(88, 184)
 
-[node name="@Node2D@63847" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1280652805 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63847" parent="NaturesNode/RocksNode" unique_id=1280652805 instance=ExtResource("3_fakoo")]
 position = Vector2(104, 184)
 
-[node name="@Node2D@63848" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1320537787 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63848" parent="NaturesNode/RocksNode" unique_id=1320537787 instance=ExtResource("3_fakoo")]
 position = Vector2(120, 184)
 
-[node name="@Node2D@63849" type="Node2D" parent="NaturesNode/RocksNode" unique_id=2065900926 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63849" parent="NaturesNode/RocksNode" unique_id=2065900926 instance=ExtResource("3_fakoo")]
 position = Vector2(136, 184)
 
-[node name="@Node2D@63850" type="Node2D" parent="NaturesNode/RocksNode" unique_id=45941414 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63850" parent="NaturesNode/RocksNode" unique_id=45941414 instance=ExtResource("3_fakoo")]
 position = Vector2(152, 184)
 
-[node name="@Node2D@63851" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1971446085 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63851" parent="NaturesNode/RocksNode" unique_id=1971446085 instance=ExtResource("3_fakoo")]
 position = Vector2(168, 184)
 
-[node name="@Node2D@63852" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1585516705 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63852" parent="NaturesNode/RocksNode" unique_id=1585516705 instance=ExtResource("3_fakoo")]
 position = Vector2(184, 184)
 
-[node name="@Node2D@63853" type="Node2D" parent="NaturesNode/RocksNode" unique_id=267373427 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63853" parent="NaturesNode/RocksNode" unique_id=267373427 instance=ExtResource("3_fakoo")]
 position = Vector2(200, 184)
 
-[node name="@Node2D@63854" type="Node2D" parent="NaturesNode/RocksNode" unique_id=169646010 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63854" parent="NaturesNode/RocksNode" unique_id=169646010 instance=ExtResource("3_fakoo")]
 position = Vector2(216, 184)
 
-[node name="@Node2D@63855" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1341584658 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63855" parent="NaturesNode/RocksNode" unique_id=1341584658 instance=ExtResource("3_fakoo")]
 position = Vector2(232, 184)
 
-[node name="@Node2D@63856" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1319765642 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63856" parent="NaturesNode/RocksNode" unique_id=1319765642 instance=ExtResource("3_fakoo")]
 position = Vector2(248, 184)
 
-[node name="@Node2D@63857" type="Node2D" parent="NaturesNode/RocksNode" unique_id=711838893 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63857" parent="NaturesNode/RocksNode" unique_id=711838893 instance=ExtResource("3_fakoo")]
 position = Vector2(264, 184)
 
-[node name="@Node2D@63858" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1669314845 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63858" parent="NaturesNode/RocksNode" unique_id=1669314845 instance=ExtResource("3_fakoo")]
 position = Vector2(280, 184)
 
-[node name="@Node2D@63859" type="Node2D" parent="NaturesNode/RocksNode" unique_id=1964114609 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63859" parent="NaturesNode/RocksNode" unique_id=1964114609 instance=ExtResource("3_fakoo")]
 position = Vector2(296, 184)
 
-[node name="@Node2D@63860" type="Node2D" parent="NaturesNode/RocksNode" unique_id=744078103 instance=ExtResource("3_fakoo")]
+[node name="@Node2D@63860" parent="NaturesNode/RocksNode" unique_id=744078103 instance=ExtResource("3_fakoo")]
 position = Vector2(312, 184)
 
 [node name="TreesNode" type="Node2D" parent="NaturesNode" unique_id=26056918]
 
-[node name="Tree" type="Node2D" parent="NaturesNode/TreesNode" unique_id=153908785 instance=ExtResource("2_8a1or")]
+[node name="Tree" parent="NaturesNode/TreesNode" unique_id=153908785 instance=ExtResource("2_8a1or")]
 position = Vector2(56, 40)
 
-[node name="@Node2D@63801" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1118551778 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63801" parent="NaturesNode/TreesNode" unique_id=1118551778 instance=ExtResource("2_8a1or")]
 position = Vector2(72, 40)
 
-[node name="@Node2D@63802" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1691541141 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63802" parent="NaturesNode/TreesNode" unique_id=1691541141 instance=ExtResource("2_8a1or")]
 position = Vector2(88, 40)
 
-[node name="@Node2D@63803" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1716418776 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63803" parent="NaturesNode/TreesNode" unique_id=1716418776 instance=ExtResource("2_8a1or")]
 position = Vector2(200, 40)
 
-[node name="@Node2D@63804" type="Node2D" parent="NaturesNode/TreesNode" unique_id=249736118 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63804" parent="NaturesNode/TreesNode" unique_id=249736118 instance=ExtResource("2_8a1or")]
 position = Vector2(216, 40)
 
-[node name="@Node2D@63805" type="Node2D" parent="NaturesNode/TreesNode" unique_id=22327597 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63805" parent="NaturesNode/TreesNode" unique_id=22327597 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 40)
 
-[node name="@Node2D@63806" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1089043681 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63806" parent="NaturesNode/TreesNode" unique_id=1089043681 instance=ExtResource("2_8a1or")]
 position = Vector2(248, 40)
 
-[node name="@Node2D@63809" type="Node2D" parent="NaturesNode/TreesNode" unique_id=19303760 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63809" parent="NaturesNode/TreesNode" unique_id=19303760 instance=ExtResource("2_8a1or")]
 position = Vector2(56, 56)
 
-[node name="@Node2D@63810" type="Node2D" parent="NaturesNode/TreesNode" unique_id=2109159053 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63810" parent="NaturesNode/TreesNode" unique_id=2109159053 instance=ExtResource("2_8a1or")]
 position = Vector2(88, 56)
 
-[node name="@Node2D@63811" type="Node2D" parent="NaturesNode/TreesNode" unique_id=2047025353 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63811" parent="NaturesNode/TreesNode" unique_id=2047025353 instance=ExtResource("2_8a1or")]
 position = Vector2(216, 56)
 
-[node name="@Node2D@63812" type="Node2D" parent="NaturesNode/TreesNode" unique_id=620351091 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63812" parent="NaturesNode/TreesNode" unique_id=620351091 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 56)
 
-[node name="@Node2D@63815" type="Node2D" parent="NaturesNode/TreesNode" unique_id=965220721 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63815" parent="NaturesNode/TreesNode" unique_id=965220721 instance=ExtResource("2_8a1or")]
 position = Vector2(56, 72)
 
-[node name="@Node2D@63816" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1178934907 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63816" parent="NaturesNode/TreesNode" unique_id=1178934907 instance=ExtResource("2_8a1or")]
 position = Vector2(72, 72)
 
-[node name="@Node2D@63817" type="Node2D" parent="NaturesNode/TreesNode" unique_id=768061586 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63817" parent="NaturesNode/TreesNode" unique_id=768061586 instance=ExtResource("2_8a1or")]
 position = Vector2(88, 72)
 
-[node name="@Node2D@63818" type="Node2D" parent="NaturesNode/TreesNode" unique_id=2119710119 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63818" parent="NaturesNode/TreesNode" unique_id=2119710119 instance=ExtResource("2_8a1or")]
 position = Vector2(216, 72)
 
-[node name="@Node2D@63819" type="Node2D" parent="NaturesNode/TreesNode" unique_id=781160288 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63819" parent="NaturesNode/TreesNode" unique_id=781160288 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 72)
 
-[node name="@Node2D@63828" type="Node2D" parent="NaturesNode/TreesNode" unique_id=524829520 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63828" parent="NaturesNode/TreesNode" unique_id=524829520 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 136)
 
-[node name="@Node2D@63829" type="Node2D" parent="NaturesNode/TreesNode" unique_id=322322511 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63829" parent="NaturesNode/TreesNode" unique_id=322322511 instance=ExtResource("2_8a1or")]
 position = Vector2(248, 136)
 
-[node name="@Node2D@63830" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1510416028 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63830" parent="NaturesNode/TreesNode" unique_id=1510416028 instance=ExtResource("2_8a1or")]
 position = Vector2(264, 136)
 
-[node name="@Node2D@63833" type="Node2D" parent="NaturesNode/TreesNode" unique_id=274806408 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63833" parent="NaturesNode/TreesNode" unique_id=274806408 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 152)
 
-[node name="@Node2D@63834" type="Node2D" parent="NaturesNode/TreesNode" unique_id=2050754759 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63834" parent="NaturesNode/TreesNode" unique_id=2050754759 instance=ExtResource("2_8a1or")]
 position = Vector2(264, 152)
 
-[node name="@Node2D@63837" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1449811352 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63837" parent="NaturesNode/TreesNode" unique_id=1449811352 instance=ExtResource("2_8a1or")]
 position = Vector2(232, 168)
 
-[node name="@Node2D@63838" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1146851936 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63838" parent="NaturesNode/TreesNode" unique_id=1146851936 instance=ExtResource("2_8a1or")]
 position = Vector2(248, 168)
 
-[node name="@Node2D@63839" type="Node2D" parent="NaturesNode/TreesNode" unique_id=1403390788 instance=ExtResource("2_8a1or")]
+[node name="@Node2D@63839" parent="NaturesNode/TreesNode" unique_id=1403390788 instance=ExtResource("2_8a1or")]
 position = Vector2(264, 168)
 
 [node name="HoleNode" type="Node2D" parent="NaturesNode" unique_id=937556446]
 
-[node name="Hole" type="Node2D" parent="NaturesNode/HoleNode" unique_id=723058095 instance=ExtResource("4_qk17b")]
+[node name="Hole" parent="NaturesNode/HoleNode" unique_id=723058095 instance=ExtResource("4_qk17b")]
 position = Vector2(72, 56)
 
 [node name="CharactersNode" type="Node2D" parent="NaturesNode" unique_id=870717871]

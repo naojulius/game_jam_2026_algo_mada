@@ -3,7 +3,7 @@ class_name DigState
 extends StateBase
 
 func enter() -> void:
-	#print("[%s] Étape 3 : CREUSER (Dig)..." % character.character_name)
+	print("[%s] Étape 3 : CREUSER (Dig)..." % character.character_name)
 	_perform_dig()
 
 func _perform_dig() -> void:

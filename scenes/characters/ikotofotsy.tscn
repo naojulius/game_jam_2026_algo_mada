@@ -2,9 +2,106 @@
 
 [ext_resource type="Script" uid="uid://blmhpkdljpc0" path="res://scripts/characters/ikotofotsy.gd" id="1_7blgw"]
 [ext_resource type="Texture2D" uid="uid://b2g28oqhe6aqv" path="res://assets/textures/characters/ikotofotsy.png" id="2_7blgw"]
+[ext_resource type="AnimationLibrary" uid="uid://bgeg1sggsubtq" path="res://animations/character_animation_library.res" id="3_frcge"]
+[ext_resource type="Script" uid="uid://56ufpexjd2rk" path="res://scenes/characters/emote_node.gd" id="4_n1dy4"]
+[ext_resource type="Texture2D" uid="uid://c60n7ufiojm15" path="res://assets/textures/emotes/pipo-popupemotes006.png" id="5_ylcwq"]
+[ext_resource type="AnimationLibrary" uid="uid://cyurh1ocdfuxi" path="res://animations/emote_animation_library.res" id="6_ylcwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uab4y"]
 size = Vector2(10, 12)
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_frcge"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_52vjc"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2p8p"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ywc7"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4a07"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gc1p1"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_b44fi"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_52vjc")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"idle_down"
+blend_point_1/node = SubResource("AnimationNodeAnimation_d2p8p")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_1/name = &"idle_left"
+blend_point_2/node = SubResource("AnimationNodeAnimation_0ywc7")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"idle_right"
+blend_point_3/node = SubResource("AnimationNodeAnimation_v4a07")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_3/name = &"idle_down 2"
+blend_point_4/node = SubResource("AnimationNodeAnimation_gc1p1")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_4/name = &"idle_right 2"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_fgdd0"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_frcge"]
+animation = &"move_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fgdd0"]
+animation = &"move_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n1dy4"]
+animation = &"move_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ylcwq"]
+animation = &"move_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uq1r3"]
+animation = &"move_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7blgw"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_frcge")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"move_down"
+blend_point_1/node = SubResource("AnimationNodeAnimation_fgdd0")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_1/name = &"move_left"
+blend_point_2/node = SubResource("AnimationNodeAnimation_n1dy4")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"move_right"
+blend_point_3/node = SubResource("AnimationNodeAnimation_ylcwq")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"move_up"
+blend_point_4/node = SubResource("AnimationNodeAnimation_uq1r3")
+blend_point_4/pos = Vector2(0, 1)
+blend_point_4/name = &"move_down 2"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_7blgw"]
+input_0/name = "IDLE"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "MOVE"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7blgw"]
+graph_offset = Vector2(-241.9271, -106.15082)
+nodes/output/position = Vector2(688, 144)
+nodes/Transition/node = SubResource("AnimationNodeTransition_7blgw")
+nodes/Transition/position = Vector2(496, 80)
+nodes/IDLE_SCALE/node = SubResource("AnimationNodeTimeScale_frcge")
+nodes/IDLE_SCALE/position = Vector2(256, 32)
+nodes/MOVE_SPACE/node = SubResource("AnimationNodeBlendSpace2D_7blgw")
+nodes/MOVE_SPACE/position = Vector2(-16, 272)
+nodes/MOVE_SCALE/node = SubResource("AnimationNodeTimeScale_fgdd0")
+nodes/MOVE_SCALE/position = Vector2(256, 208)
+nodes/IDLE_SPACE/node = SubResource("AnimationNodeBlendSpace2D_b44fi")
+nodes/IDLE_SPACE/position = Vector2(-16, 16)
+node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"IDLE_SCALE", &"Transition", 1, &"MOVE_SCALE", &"IDLE_SCALE", 0, &"IDLE_SPACE", &"MOVE_SCALE", 0, &"MOVE_SPACE"]
 
 [node name="Ikotofotsy" type="CharacterBody2D" unique_id=487417437]
 script = ExtResource("1_7blgw")
@@ -13,7 +110,43 @@ script = ExtResource("1_7blgw")
 shape = SubResource("RectangleShape2D_uab4y")
 debug_color = Color(1.347661e-06, 0.6463175, 0.23239765, 0)
 
-[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=325729642]
+[node name="SpriteNode" type="Node2D" parent="." unique_id=972550369]
+position = Vector2(0, 6)
+scale = Vector2(1, 0.95)
+
+[node name="CharacterSprite" type="Sprite2D" parent="SpriteNode" unique_id=325729642]
+position = Vector2(0, -6)
 texture = ExtResource("2_7blgw")
 hframes = 5
 vframes = 20
+frame = 21
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpriteNode" unique_id=339730370]
+root_node = NodePath("../..")
+libraries/ = ExtResource("3_frcge")
+
+[node name="AnimationTree" type="AnimationTree" parent="SpriteNode" unique_id=187054216]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_7blgw")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Transition/current_state = "IDLE"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 0
+parameters/IDLE_SCALE/scale = 0.5
+parameters/MOVE_SPACE/blend_position = Vector2(0, 0)
+parameters/MOVE_SCALE/scale = 0.29999999999999716
+parameters/IDLE_SPACE/blend_position = Vector2(0, 0)
+
+[node name="EmoteNode" type="Node2D" parent="." unique_id=2048534298]
+z_index = 2
+script = ExtResource("4_n1dy4")
+
+[node name="EmoteSprite" type="Sprite2D" parent="EmoteNode" unique_id=2094722562]
+position = Vector2(0, -13)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ylcwq")
+hframes = 3
+frame = 1
+
+[node name="EmoteAnimationPlayer" type="AnimationPlayer" parent="EmoteNode" unique_id=576142846]
+libraries/ = ExtResource("6_ylcwq")

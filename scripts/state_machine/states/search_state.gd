@@ -7,10 +7,12 @@ func enter() -> void:
 	_perform_search()
 
 func _perform_search() -> void:
-	var start_grid := AStarManager.world_to_grid(character.global_position)
-	var target_grid := _get_far_random_walkable_target(start_grid, 3)
 	
-	var calculated_path := AStarManager.find_path_recursive(start_grid, target_grid, 100)
+	character.emote.play_search()
+	var start_grid = AStarManager.world_to_grid(character.global_position)
+	var target_grid := _get_random_walkable_target(start_grid)
+	
+	var calculated_path = AStarManager.find_path_recursive(start_grid, target_grid, 100)
 	
 	# Si la position actuelle est dans le chemin, on la retire
 	if not calculated_path.is_empty() and calculated_path[0] == start_grid:
@@ -25,19 +27,16 @@ func _perform_search() -> void:
 		return
 
 	character.current_path = calculated_path
+	
+	await character.get_tree().create_timer(1.0).timeout
 	character.state_machine.change_state("move")
 
-func _get_far_random_walkable_target(current_pos: Vector2i, min_distance: int = 3) -> Vector2i:
+func _get_random_walkable_target(current_pos: Vector2i) -> Vector2i:
 	var walkable_cells := AStarManager.get_all_walkable_cells()
+	
+	walkable_cells.erase(current_pos)
+	
 	if walkable_cells.is_empty():
 		return current_pos
-
-	var far_cells: Array[Vector2i] = []
-	for cell in walkable_cells:
-		if abs(cell.x - current_pos.x) + abs(cell.y - current_pos.y) >= min_distance:
-			far_cells.append(cell)
-
-	if not far_cells.is_empty():
-		return far_cells.pick_random()
-
+		
 	return walkable_cells.pick_random()
